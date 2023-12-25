@@ -1,37 +1,25 @@
-function calculateBMI() {
-    // Get weight and height input values
-    var weight = document.getElementById("weight").value;
-    var height = document.getElementById("height").value;
-
-    // Check if both weight and height are provided
-    if (weight && height) {
-        // Calculate BMI
-        var bmi = weight / (height * height);
-
-        // Display the result
-        displayResult(bmi);
-    } else {
-        alert("Please enter both weight and height.");
+function generateText(value){
+    const text = document.getElementById("result");
+    text.innerHTML = 'BMI is : '+value
+    const suggestion = document.getElementById("suggestion");
+    if(value < 18.5){
+        suggestion.innerHTML = "Your condition is Under Weight"
+    }else if(value >= 18.5 && value < 25){
+        suggestion.innerHTML = "Your condition is Normal Weight"
+    }else if(value >= 25 && value < 30){
+        suggestion.innerHTML = "Your condition is Over Weight"
+    }else{
+        suggestion.innerHTML = "Your condition is Obese"
     }
 }
-
-function displayResult(bmi) {
-    var resultDiv = document.getElementById("result");
-
-    // Round BMI to two decimal places
-    bmi = bmi.toFixed(2);
-
-    // Display the result
-    resultDiv.innerHTML = "Your BMI is: " + bmi;
-
-    // Additional interpretation of BMI categories
-    if (bmi < 18.5) {
-        resultDiv.innerHTML += "<br>Underweight";
-    } else if (bmi >= 18.5 && bmi < 25) {
-        resultDiv.innerHTML += "<br>Normal weight";
-    } else if (bmi >= 25 && bmi < 30) {
-        resultDiv.innerHTML += "<br>Overweight";
-    } else {
-        resultDiv.innerHTML += "<br>Obese";
+function calculateBMI(){
+    console.log('Yes');
+    const height = document.getElementById('height').value
+    const weight = document.getElementById('weight').value
+    if(height && weight){
+        const bmi = weight / (height**2)
+        generateText(bmi.toFixed(2))
+    }else{
+        alert('Please enter both weight and height')
     }
 }

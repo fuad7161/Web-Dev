@@ -1,4 +1,4 @@
-body {
+body{
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
@@ -8,26 +8,25 @@ body {
     height: 100vh;
 }
 
-.calculator {
-    background-color: #fff;
+.calculator{
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgb(0, 0, 0 , 0.1);
 }
 
-label {
+label{
     display: block;
     margin-bottom: 8px;
 }
-
-input {
+input{
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
 }
 
-button {
+button{
     background-color: #4caf50;
     color: #fff;
     border: none;
@@ -40,11 +39,16 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #45a049;
+button:hover{
+    background-color: #171b17;
 }
 
-#result {
+#result{
     margin-top: 20px;
     font-weight: bold;
 }
+
+#suggestion{
+    margin-top: 10px;
+}
+
