@@ -1,4 +1,7 @@
 <h1 align="center">BMI Canculator Project</h1>
+
+visit this site [link](https://fuad7161-bmi-calculator.netlify.app/)
+
 you have to give your height and weight and you will get your BMI value and your present condition of health.
 
 ## Initial stage
