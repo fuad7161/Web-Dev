@@ -1,35 +1,21 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const newTaskInput = document.getElementById('newTask');
-    const addTaskButton = document.getElementById('addTask');
-    const taskList = document.getElementById('taskList');
-  
-    // Event listener to add a new task
-    addTaskButton.addEventListener('click', function () {
-      const newTaskText = newTaskInput.value.trim();
-  
-      if (newTaskText !== '') {
-        const taskItem = document.createElement('li');
-        taskItem.innerHTML = `
-          <input type="checkbox">
-          <span>${newTaskText}</span>
-          <button class="delete">Delete</button>
-        `;
-  
-        // Add event listener to mark task as completed
-        const checkbox = taskItem.querySelector('input[type="checkbox"]');
-        checkbox.addEventListener('change', function () {
-          taskItem.classList.toggle('completed', checkbox.checked);
-        });
-  
-        // Add event listener to delete the task
-        const deleteButton = taskItem.querySelector('.delete');
-        deleteButton.addEventListener('click', function () {
-          taskList.removeChild(taskItem);
-        });
-  
-        taskList.appendChild(taskItem);
-        newTaskInput.value = ''; // Clear the input field
-      }
-    });
-  });
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="todo-container">
+    <h1>To-Do List</h1>
+    <input type="text" id="newTask" placeholder="Add a new task">
+    <button id="addTask">Add Task</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
