@@ -5,7 +5,6 @@ import { Toast, toast } from "react-toastify";
 import axios from "axios";
 
 const Home = ()=>{
-    <h1>moye moye</h1>
     const [data,setData] = useState([]);
     const loadData = async ()=>{
         try {
@@ -28,6 +27,7 @@ const Home = ()=>{
         }
     }
     return (
+        
         <div style={{marginTop:"150px"}}>
             <Link to="/addContact">
             <button className="btn btn-contact">Add Contact</button>

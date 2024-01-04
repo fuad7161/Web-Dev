@@ -58,6 +58,7 @@ const AddEdit = ()=>{
 
     return (
         <div style={{marginTop:"100px"}}>
+            <h1>{id?"Edit":"Add"} Contact</h1>
             <form style={{
                 margin:"auto",
                 padding:"15px",
