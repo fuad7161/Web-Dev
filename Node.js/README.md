@@ -47,3 +47,21 @@ const myServer = http.createServer((req,res)=>{
 </details>
 
 ### URL..
+### Version
+version 4.18.2 =>
+
+frist .  second    .  third
+mejor . Recomended . optional
+
+^4.18.2 mean mejor will not change but recomended and optional will update with the current version.
+
+~4.18.2 mean mejor and Recomended will not change but optional will update with the current version.
+
+#### Restfull api..
+
+server and client architechture. request and response.
+
+CSR -> Client Side Rendering. Its not fast enough.
+
+SSR -> Server Side Rendering. Its very fast.
+
