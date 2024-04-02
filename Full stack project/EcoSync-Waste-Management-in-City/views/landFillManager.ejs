@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <body>
+        <div class="container">
+            <h1 class="text-center">Landfill Transfers</h1>
+
+            <!-- Add a button to create a new landfill transfer -->
+            <div class="text-left mb-4">
+                <form action="/landfill_transfer/create" method="GET">
+                    <button class="btn btn-primary">Create New Transfer</button>
+                </form>
+            </div>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Vehicle ID</th>
+                        <th>Waste Volume</th>
+                        <th>Arrival Time</th>
+                        <th>Departure Time</th>
+                    </tr>
+                </thead>
+                <tbody id="transferTableBody">
+                    <!-- Landfill transfer data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            // Function to handle navigation to the specified URL
+            function navigateTo(url) {
+                window.location.href = url;
+            }
+
+            // Function to handle button click event to view transfer details
+            function viewTransferDetails(transferId) {
+                window.location.href = "/landfill_transfer/" + transferId;
+            }
+
+            fetch("/landfill_transfer")
+                .then((response) => response.json())
+                .then((transfers) => {
+                    const transferTableBody = document.getElementById("transferTableBody");
+                    transfers.forEach((transfer) => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                        <td>${transfer.vehicle_id}</td>
+                        <td>${transfer.waste_volume}</td>
+                        <td>${transfer.arrival_time}</td>
+                        <td>${transfer.departure_time}</td>
+                         `;
+                        transferTableBody.appendChild(row);
+                    });
+                })
+                .catch((error) => console.error("Error fetching landfill transfers:", error));
+        </script>
+    </body>
